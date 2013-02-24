@@ -1,6 +1,6 @@
 <%@ page import="com.lart2150.fms.*" %>
 <%@ include file="header.jsp" %>
-      <form class="span4">
+      <form class="span4" method="post" >
         <h2 class="form-signin-heading">Please sign in</h2>
         <input name="username" type="text" class="input-block-level" placeholder="username">
         <input name="password" type="password" class="input-block-level" placeholder="Password">
@@ -15,7 +15,7 @@
 String name = request.getParameter( "username" );
 if (request.getParameter( "username" ) != null && com.lart2150.fms.WebUIHelper.adminLogin(name, request.getParameter( "password" ))) {
   session.setAttribute( "username", name  );
-  response.setStatus(301);
+  response.setStatus(302);
   response.setHeader( "Location", "./" );
   response.setHeader( "Connection", "close" );
 }
