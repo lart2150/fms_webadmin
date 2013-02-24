@@ -8,6 +8,7 @@
 <%
 if (isLoggedin){ %>
 <h1>FMS landing page</h1>
+
 <table class="table">
     <thead>
         <tr>
@@ -28,7 +29,7 @@ while (localIterator.hasNext())
 {
     out.print("<tr>");
     file = localIterator.next();
-    out.print("<td>" + file.getFileName() + "</td>");
+    out.print("<td><a href=\"adminfile.jsp?id=" + file.getFileId() + "\">" + file.getFileName() + "</a></td>");
     out.print("<td>" + file.getStatus() + "</td>");
     out.print("<td>" + file.getSize() + "</td>");
     out.print("<td>" + file.getExtendedPrivString() + "</td>");
