@@ -9,14 +9,6 @@
 if (isLoggedin){ %>
 <%
 
-
-
-
-
-
-
-
-
 DBSManager dbsManager = ServerSingleton.getDBSManager();
 int fileID = (int) Integer.parseInt(request.getParameter( "id" ));
 Database file = dbsManager.getFileById(fileID);
@@ -30,4 +22,16 @@ Database file = dbsManager.getFileById(fileID);
 <div class="span3">Full Path</div><div class="span9"><%= file.getFilePath() %></div>
 
 <% } %>
+<div class="span9">
+    <div class="btn-group">
+        <button data-toggle="dropdown" class="btn dropdown-toggle">File Actions<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="adminfileinteraction.jsp?action=close&id=<%= Integer.parseInt(request.getParameter( "id" )) %>">Close</a></li>
+            <li><a href="adminfileinteraction.jsp?action=open&id=<%= Integer.parseInt(request.getParameter( "id" )) %>">Open</a></li>
+            <li><a href="adminfileinteraction.jsp?action=pause&id=<%= Integer.parseInt(request.getParameter( "id" )) %>">Pause</a></li>
+            <li><a href="adminfileinteraction.jsp?action=resume&id=<%= Integer.parseInt(request.getParameter( "id" )) %>">Resume</a></li>
+            <li><a href="#">Message Clients</a></li>
+        </ul>
+    </div>
+</div>
 <%@ include file="footer.jsp" %>
