@@ -33,7 +33,7 @@ while (localIterator.hasNext())
     out.print("<td>" + file.getStatus() + "</td>");
     out.print("<td>" + file.getSize() + "</td>");
     out.print("<td>" + file.getExtendedPrivString() + "</td>");
-    //out.print("<td>" + file.getFilePath() + "</td>");
+    out.print("</tr>");
 }
 %>
     </tbody>

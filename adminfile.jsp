@@ -20,7 +20,7 @@ Database file = dbsManager.getFileById(fileID);
 <div class="span3">Guest allowed</div><div class="span9"><%= file.getStatus() %></div>
 <div class="span3">Number of connected Clients</div><div class="span9"><%= file.getNumberOfClients() %></div>
 <div class="span3">Full Path</div><div class="span9"><%= file.getFilePath() %></div>
-
+</div>
 <% } %>
 <div class="span9">
     <div class="btn-group">
